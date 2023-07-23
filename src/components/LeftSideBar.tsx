@@ -49,7 +49,7 @@ const page = () => {
           <Link
             className='hover:bg-white/10 text-xl transition duration-200 flex items-center justify-start w-fit space-x-4 rounded-3xl py-2 px-6'
             href={
-              item.title.toLocaleLowerCase() === 'home'
+              item.title.toLocaleLowerCase() === 'twitter'
                 ? '/'
                 : `/${item.title.toLowerCase()}`
             }
@@ -61,7 +61,7 @@ const page = () => {
             {item.title !== 'Twitter' && <div>{item.title}</div>}
           </Link>
         ))}
-        <button className='rounded-full m-4 bg-twitterColor p-2 text-xl text-center hover:bg-opacity-70 transition duration-200'>
+        <button className='rounded-full m-4 bg-twitterColor p-2 text-l text-center hover:bg-opacity-70 transition duration-200'>
           Tweet
         </button>
       </div>
