@@ -1,7 +1,7 @@
+import { Box } from "@mui/material"
+
 const RightSideBar = () => {
-  return (
-    <div>RightSideBar</div>
-  )
+  return <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>RightSideBar</Box>;
 }
 
 export default RightSideBar

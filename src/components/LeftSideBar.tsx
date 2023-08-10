@@ -1,6 +1,8 @@
+import { Box } from "@mui/material"
+
 const LeftSideBar = () => {
   return (
-    <div>LeftSideBar</div>
+    <Box sx={{display: {xs: 'none', sm: 'flex'}}}>LeftSideBar</Box>
   )
 }
 
