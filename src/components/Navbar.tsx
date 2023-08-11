@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pets } from '@mui/icons-material';
+import { Logout, PersonAdd, Pets, Settings } from '@mui/icons-material';
 import {
   AppBar,
   Toolbar,
@@ -11,6 +11,8 @@ import {
   Avatar,
   Menu,
   MenuItem,
+  Divider,
+  ListItemIcon,
 } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -39,16 +41,20 @@ const StyledBox = styled(Box)({
 });
 
 const Navbar = () => {
-  
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
       <AppBar position='sticky' sx={{ height: '4rem' }}>
         <StyledToolbar sx={{ width: '85%', margin: 'auto' }}>
-          <Typography variant='h5' sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            LOGO
-          </Typography>
-          <Pets sx={{ display: { sm: 'none' } }} />
+          <Pets sx={{ fontSize: '2rem' }} />
           <StyledInputBase placeholder='Search...'></StyledInputBase>
           <StyledBox>
             <Badge badgeContent={4} color='error'>
@@ -57,26 +63,73 @@ const Navbar = () => {
             <Badge badgeContent={4} color='error'>
               <NotificationsIcon />
             </Badge>
-            <Avatar src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80' />
+            <Avatar
+              src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
+              onClick={handleClick}
+            />
           </StyledBox>
         </StyledToolbar>
       </AppBar>
       <Menu
-        id='demo-positioned-menu'
-        aria-labelledby='demo-positioned-button'
-        open={true}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
+        anchorEl={anchorEl}
+        id='account-menu'
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        PaperProps={{
+          elevation: 0,
+          sx: {
+            overflow: 'visible',
+            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+            mt: 1.5,
+            '& .MuiAvatar-root': {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
+            },
+            '&:before': {
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: 'background.paper',
+              transform: 'translateY(-50%) rotate(45deg)',
+              zIndex: 0,
+            },
+          },
         }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Avatar /> Profile
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Avatar /> My account
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <PersonAdd fontSize='small' />
+          </ListItemIcon>
+          Add another account
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <Settings fontSize='small' />
+          </ListItemIcon>
+          Settings
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <Logout fontSize='small' />
+          </ListItemIcon>
+          Logout
+        </MenuItem>
       </Menu>
     </>
   );
