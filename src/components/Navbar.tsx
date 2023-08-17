@@ -4,7 +4,6 @@ import {
   AppBar,
   Toolbar,
   styled,
-  Typography,
   InputBase,
   Box,
   Badge,
