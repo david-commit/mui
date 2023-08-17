@@ -8,7 +8,7 @@ function App() {
   return (
     <Box>
       <Navbar />
-      <Stack direction='row' display='flex' justifyContent='space-between'>
+      <Stack direction='row' display='flex' justifyContent='space-between' width='85%' m='auto'>
         <LeftSideBar />
         <Feed />
         <RightSideBar />

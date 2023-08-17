@@ -33,6 +33,7 @@ const StyledInputBase = styled(InputBase)({
   [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
+  width: '30%',
 });
 
 const StyledBox = styled(Box)({

@@ -10,8 +10,8 @@ import NightlightIcon from '@mui/icons-material/Nightlight';
 
 const LeftSideBar = () => {
   return (
-    <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-      <List sx={{ border: '1px solid red' }}>
+    <Box flex={1} sx={{ display: { xs: 'none', sm: 'flex' }, border: '1px solid red' }}>
+      <List >
         <ListItem disablePadding>
           <ListItemButton LinkComponent='a' href='#'>
             <ListItemIcon>
