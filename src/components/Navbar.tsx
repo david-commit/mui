@@ -13,6 +13,7 @@ import {
   MenuItem,
   Divider,
   ListItemIcon,
+  Stack,
 } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -106,10 +107,11 @@ const Navbar = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <Avatar src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80' />{' '}
+          <Stack direction='column'>
+            <p>Profile</p>
+            <small>@username</small>
+          </Stack>
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
