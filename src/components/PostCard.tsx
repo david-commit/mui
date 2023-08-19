@@ -14,6 +14,7 @@ import { red } from '@mui/material/colors';
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
+import handsImage from '../images/justin-groep-gRj8fOks0eg-unsplash.jpg'
 
 const PostCard = () => {
   return (
@@ -35,7 +36,7 @@ const PostCard = () => {
       <CardMedia
         component='img'
         height='20%'
-        image='src/images/justin-groep-gRj8fOks0eg-unsplash.jpg'
+        image={handsImage}
         alt='Paella dish'
       />
       <CardContent>
