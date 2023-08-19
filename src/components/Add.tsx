@@ -1,6 +1,19 @@
 import { useState } from 'react';
-import { Tooltip, Fab, Box, Modal, styled, Typography } from '@mui/material';
+import {
+  Tooltip,
+  Fab,
+  Box,
+  Modal,
+  styled,
+  Typography,
+  Avatar,
+  TextField,
+  Stack,
+} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import ImageIcon from '@mui/icons-material/Image';
+import VideocamIcon from '@mui/icons-material/Videocam';
 
 const Add = () => {
   const [open, setOpen] = useState(false);
@@ -8,6 +21,13 @@ const Add = () => {
   const StyledModal = styled(Modal)({
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
+  });
+
+  const UserBox = styled(Box)({
+    display: 'flex',
+    gap: '1rem',
+    marginTop: '1rem',
     alignItems: 'center',
   });
 
@@ -41,9 +61,33 @@ const Add = () => {
             borderRadius: '1rem',
           }}
         >
-          <Typography variant='h6' color='gray' fontWeight={500}>
-           Create Post
+          <Typography variant='h6' fontWeight={500}>
+            Create Post
           </Typography>
+          <UserBox>
+            <Avatar
+              src='/potrait.jpeg'
+              alt='Remy Sharp'
+              // sx={{ width: 48, height: 48 }}
+            />
+            <Typography variant='h6' color='gray' fontSize='1rem'>
+              John Doe
+            </Typography>
+          </UserBox>
+          <TextField
+            id='standard-multiline-static'
+            placeholder="What's on your mind"
+            multiline
+            rows={3}
+            variant='standard'
+            fullWidth
+            sx={{ mt: '1rem', fontSize: '1rem' }}
+          />
+          <Stack direction='row' gap={1} mt='1rem' color='grey'>
+            <EmojiEmotionsIcon />
+            <ImageIcon />
+            <VideocamIcon />
+          </Stack>
         </Box>
       </StyledModal>
     </>
