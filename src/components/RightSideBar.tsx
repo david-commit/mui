@@ -81,11 +81,11 @@ const RightSideBar = () => {
           </ImageList>
         </Box>
         <Box sx={{ mb: '2rem', display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='h6' fontWeight={100} >
+          <Typography variant='h6' fontWeight={100} mb='6px'>
             Recent Conversations
           </Typography>
           <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', padding: 0 }}
           >
             <ListItem alignItems='flex-start'>
               <ListItemAvatar>

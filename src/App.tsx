@@ -3,6 +3,7 @@ import LeftSideBar from './components/LeftSideBar';
 import RightSideBar from './components/RightSideBar';
 import Feed from './components/Feed';
 import { Box, Stack } from '@mui/material';
+import Add from './components/Add';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Feed />
         <RightSideBar />
       </Stack>
+      <Add />
     </Box>
   );
 }
