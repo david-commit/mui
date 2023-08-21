@@ -13,6 +13,7 @@ import {
   Divider,
   ListItemIcon,
   Stack,
+  Button,
 } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -24,7 +25,7 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const StyledInputBase = styled(InputBase)({
-  backgroundColor: 'white',
+  backgroundColor: 'background.primary',
   borderRadius: '6px',
   paddingLeft: '10px',
   paddingTop: '3px',
@@ -61,6 +62,7 @@ const Navbar = () => {
             <Badge badgeContent={4} color='error'>
               <MailIcon />
             </Badge>
+
             <Badge badgeContent={4} color='error'>
               <NotificationsIcon />
             </Badge>

@@ -1,4 +1,12 @@
-import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material"
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Switch,
+} from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import SubjectIcon from '@mui/icons-material/Subject';
 import StorefrontIcon from '@mui/icons-material/Storefront';
@@ -8,9 +16,10 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 
-const LeftSideBar = () => {
+const LeftSideBar = ({ setMode, mode }) => {
+
   return (
-    <Box flex={1.5} sx={{ display: { xs: 'none', sm: 'flex' } }}>
+    <Box flex={1} sx={{ display: { xs: 'none', sm: 'flex' } }}>
       <Box sx={{ position: 'fixed' }}>
         <List>
           <ListItem disablePadding>
@@ -74,13 +83,13 @@ const LeftSideBar = () => {
               <ListItemIcon>
                 <NightlightIcon />
               </ListItemIcon>
-              <Switch defaultChecked />
+              <Switch defaultChecked onChange={() => setMode(mode === 'light' ? 'dark' : 'light')} />
             </ListItemButton>
           </ListItem>
         </List>
       </Box>
     </Box>
   );
-}
+};
 
-export default LeftSideBar
+export default LeftSideBar;

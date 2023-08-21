@@ -9,11 +9,14 @@ import {
   Avatar,
   TextField,
   Stack,
+  ButtonGroup,
+  Button,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import ImageIcon from '@mui/icons-material/Image';
 import VideocamIcon from '@mui/icons-material/Videocam';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Add = () => {
   const [open, setOpen] = useState(false);
@@ -56,7 +59,8 @@ const Add = () => {
           sx={{
             width: 400,
             height: 320,
-            backgroundColor: 'white',
+            bgcolor:'background.default',
+             color:'text.primary',
             padding: '1rem 1.5rem',
             borderRadius: '1rem',
           }}
@@ -88,6 +92,16 @@ const Add = () => {
             <ImageIcon />
             <VideocamIcon />
           </Stack>
+          <ButtonGroup
+            variant='contained'
+            aria-label='outlined primary button group'
+            sx={{ display: 'flex', mt: '2rem' }}
+          >
+            <Button sx={{ fontWeight: 'bold', flex: 1 }}>Post</Button>
+            <Button>
+              <CalendarMonthIcon />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyledModal>
     </>
