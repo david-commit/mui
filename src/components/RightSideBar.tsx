@@ -41,8 +41,8 @@ const RightSideBar = () => {
   ];
 
   return (
-    <Box flex={2} sx={{ display: { xs: 'none', sm: 'flex' } }}>
-      <Box sx={{ position: 'fixed', p: 2 }}>
+    <Box flex={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
+      <Box sx={{ position: 'fixed', overflowY: 'scroll' }}>
         <Box sx={{ mb: '2rem', display: 'flex', flexDirection: 'column' }}>
           <Typography variant='h6' fontWeight={100} mb='6px'>
             Online Friends
@@ -85,7 +85,12 @@ const RightSideBar = () => {
             Recent Conversations
           </Typography>
           <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', padding: 0 }}
+            sx={{
+              width: '100%',
+              maxWidth: 360,
+              bgcolor: 'background.paper',
+              padding: 0,
+            }}
           >
             <ListItem alignItems='flex-start'>
               <ListItemAvatar>

@@ -57,10 +57,11 @@ const Add = () => {
       >
         <Box
           sx={{
-            width: 400,
+            width: '60%',
+            maxWidth: 400,
             height: 320,
-            bgcolor:'background.default',
-             color:'text.primary',
+            bgcolor: 'background.default',
+            color: 'text.primary',
             padding: '1rem 1.5rem',
             borderRadius: '1rem',
           }}
