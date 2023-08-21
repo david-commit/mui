@@ -13,7 +13,6 @@ import {
   Divider,
   ListItemIcon,
   Stack,
-  Button,
 } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
