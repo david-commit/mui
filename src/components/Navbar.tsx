@@ -19,6 +19,7 @@ import {
   ListItemButton,
   ListItemText,
   Switch,
+  IconButton,
 } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -53,7 +54,7 @@ const StyledInputBase = styled(InputBase)({
 const StyledBox = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  gap: '1rem',
+  gap: '0.5rem',
 });
 
 const Navbar = ({ setMode, mode }) => {
@@ -68,7 +69,7 @@ const Navbar = ({ setMode, mode }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   // Menu drawer
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -79,22 +80,29 @@ const Navbar = ({ setMode, mode }) => {
       <AppBar position='sticky' sx={{ height: '4rem', mb: '1rem' }}>
         <StyledToolbar sx={{ width: '85%', margin: 'auto' }}>
           <Box sx={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <MenuIcon sx={{ display: { sm: 'none' } }} onClick={toggleDrawer} />
+            <IconButton sx={{ display: { sm: 'none' } }} onClick={toggleDrawer}>
+              <MenuIcon />
+            </IconButton>
             <Pets sx={{ fontSize: '2rem' }} />
           </Box>
           <StyledInputBase placeholder='Search...'></StyledInputBase>
           <StyledBox>
-            <Badge badgeContent={4} color='error'>
-              <MailIcon />
-            </Badge>
-
-            <Badge badgeContent={4} color='error'>
-              <NotificationsIcon />
-            </Badge>
-            <Avatar
-              src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
-              onClick={handleClick}
-            />
+            <IconButton>
+              <Badge badgeContent={4} color='error'>
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton>
+              <Badge badgeContent={4} color='error'>
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton>
+              <Avatar
+                src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
+                onClick={handleClick}
+              />
+            </IconButton>
           </StyledBox>
         </StyledToolbar>
       </AppBar>
@@ -107,7 +115,7 @@ const Navbar = ({ setMode, mode }) => {
         <List
           sx={{
             // width: '70%',
-            p: '4rem 2rem'
+            p: '4rem 2rem',
           }}
         >
           <ListItem disablePadding>
