@@ -42,7 +42,7 @@ const RightSideBar = () => {
 
   return (
     <Box flex={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
-      <Box sx={{ position: 'fixed', overflowY: 'scroll' }}>
+      <Box sx={{ position: 'fixed' }}>
         <Box sx={{ mb: '2rem', display: 'flex', flexDirection: 'column' }}>
           <Typography variant='h6' fontWeight={100} mb='6px'>
             Online Friends
